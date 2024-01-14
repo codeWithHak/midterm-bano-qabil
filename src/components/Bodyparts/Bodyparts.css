@@ -1,0 +1,17 @@
+.bodypart-div {
+  padding: 4vw 0;
+}
+img {
+  margin-right: 5vw;
+  width: 8vw;
+  cursor: pointer;
+}
+img::selection {
+  background: white;
+}
+img:hover {
+  transform: scale(
+    1.2
+  ); /*
+   Corrected the syntax and adjusted the rotation value */
+}

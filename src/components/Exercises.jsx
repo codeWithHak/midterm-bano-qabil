@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import ExcerciseCard from "./ExcerciseCard/ExcerciseCard";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
 
-const Exercises = () => {
+const Exercises = ({ exercises, setExercises, setbodyPart }) => {
+  console.log(exercises);
   return (
     <div>
-      Exercises
+      {exercises.map((exercises, idx) => {
+        <ExcerciseCard key={idx} excercise={excercise} />;
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Exercises
+export default Exercises;
