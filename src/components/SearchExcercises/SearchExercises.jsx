@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Search.css";
 import { exerciseOptions, fetchData } from "../../utils/fetchData";
-import { useEffect } from "react";
 import Horizontal from "../HorizontalScroller/Horizontal";
 
 const SearchExercises = ({
@@ -10,8 +9,7 @@ const SearchExercises = ({
   setbodyPart,
   setExercises,
 }) => {
-  const [search, setSearch] = useState([]);
-
+  const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -27,13 +25,14 @@ const SearchExercises = ({
     fetchExercisesData();
   }, []);
 
-  const HandleSubmit = async () => {
+  const handleSubmit = async () => {
     if (search) {
       const excerciseData = await fetchData(
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
-      const SerachExcersiced = excerciseData.filter(
+
+      const searchedExercises = excerciseData.filter(
         (item) =>
           item.name.toLowerCase().includes(search) ||
           item.target.toLowerCase().includes(search) ||
@@ -42,28 +41,33 @@ const SearchExercises = ({
       );
 
       setSearch("");
-      setExercises(SerachExcersiced);
-      console.log(setExercises);
+      setExercises(searchedExercises);
     }
   };
+
+  useEffect(() => {
+    // console.log(exercises);
+  }, [exercises]);
+
   return (
     <div className="search-div">
-      <h1>Awesome Excercise you should Know</h1>
-      <div className="seacrh-bar">
+      <h1>Awesome Exercise you should Know</h1>
+
+      <div className="search-bar">
         <input
           type="text"
-          placeholder="serarch Excericse Now"
+          placeholder="Search Exercise Now"
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
         />
-        <button onClick={HandleSubmit}>Seacrh</button>
+        <button onClick={handleSubmit}>Search</button>
       </div>
+
       <Horizontal
         data={bodyParts}
         setbodyPart={setbodyPart}
         bodyPart={bodyPart}
-        setExcercise={setExercises}
-        // excercise={excercise}
+        setExercise={setExercises}
       />
     </div>
   );

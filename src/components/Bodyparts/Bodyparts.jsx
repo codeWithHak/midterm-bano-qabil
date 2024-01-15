@@ -7,7 +7,7 @@ const BodyParts = ({ item, excercise, bodyPart, setbodyPart }) => {
       className="bodypart-div"
       onClick={() => {
         setbodyPart(item);
-        window.scrollTo({ to: 100, left: 100 });
+        // window.scrollTo({ to: 100, left: 100 });
       }}>
       <img src={logo} alt="aa" />
       <h3>{item}</h3>
