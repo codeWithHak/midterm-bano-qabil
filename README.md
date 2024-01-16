@@ -11,7 +11,10 @@ The website leverages various APIs to provide real-time data and features, inclu
 ## Team Members
 
  1](https://github.com/iamabdulrafay)
-- [ iamabdulrafay]  
+- [ iamabdulrafay]
+ 2](https://github.com/codeWithHak)
+- [ codeWithHak ]  
+
 
 ## Setup Instructions
 
