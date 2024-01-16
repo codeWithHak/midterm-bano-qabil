@@ -12,7 +12,7 @@ The website leverages various APIs to provide real-time data and features, inclu
 
  1](https://github.com/iamabdulrafay)
 - [ iamabdulrafay]
- 2](https://github.com/codeWithHak)
+- 2](https://github.com/codeWithHak)
 - [ codeWithHak ]  
 
 
